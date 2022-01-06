@@ -114,6 +114,7 @@ func (p *LocalJsonConfig) loop() {
 
 func (p *LocalJsonConfig) read(cfg interface{}) {
 	jsonClient, err := NewJSonConfig(p.path)
+	section(p.listStruct)
 	for _, v := range p.listStruct {
 		if len(p.section) > 0 {
 			v.Section = p.section
